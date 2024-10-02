@@ -8,6 +8,7 @@
         "vscode": {
             "extensions": [
                 "ms-vscode.live-server",
+                "redhat.vscode-yaml",
                 "redhat.vscode-xml",
                 "MS-SarifVSCode.sarif-viewer"
             ]
