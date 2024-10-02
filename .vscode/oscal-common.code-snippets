@@ -1,0 +1,163 @@
+{
+    "Prop": {
+        "scope": "xml",
+        "prefix": "_prop",
+        "body": [
+            "<prop name=\"$1\" value=\"$2\" ${3:uuid=\"${UUID}\"} ${4:class=\"$5\"}/>"
+        ],
+    },
+    "Link": {
+        "scope": "xml",
+        "prefix": "_link",
+        "body": [
+            "<link href=\"$1\" ${2:rel=\"$3\"} ${4:rel=\"${5|application/json,application/yaml,application/oscal+xml,application/oscal+json,application/oscal+yaml|}\"}/>"
+        ]
+    },
+    "Description": {
+        "scope": "xml",
+        "prefix": "_description",
+        "body": [
+            "<description>",
+            "\t</p>$1</p>",
+            "</description>"
+        ]
+    },
+    "Metadata": {
+        "scope": "xml",
+        "prefix": "_metadata",
+        "body": [
+            "<metadata>",
+            "\t<title>$1</title>",
+            "\t<last-modified>$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND.000-04:00</last-modified>",
+            "\t<version>${CURRENT_YEAR}${CURRENT_MONTH}${CURRENT_DATE}</version>",
+            "\t<oscal-version>1.0.4</oscal-version>",
+            "\t$2",
+            "</metadata>",
+        ]
+    },
+    "Role": {
+        "scope": "xml",
+        "prefix": "_role",
+        "body": [
+            "<role id=\"$1\">",
+            "\t<title>$2</title>",
+            "</role>"
+        ]
+    },
+    "Party": {
+        "scope": "xml",
+        "prefix": "_party",
+        "body": [
+            "<party uuid=\"${UUID}\" type=\"${1|person,organization|}\">",
+            "\t<name>$2</name>",
+            "\t${3:<member-of-organization>$4</member-of-organization>}",
+            "</party>"
+        ]
+    },
+    "Responsible Party": {
+        "scope": "xml",
+        "prefix": "_responsible_party",
+        "body": [
+            "<responsible-party role-id=\"$1\">",
+            "\t<party-uuid>$2</party-uuid>",
+            "</responsible-party>"
+        ]
+    },
+    "Party Role Responsible Party": {
+        "scope": "xml",
+        "prefix": "_party_role_responsible_party",
+        "body": [
+            "<role id=\"$1\">",
+            "\t<title>$2</title>",
+            "</role>",
+            "<party uuid=\"${3:${UUID}}\" type=\"${4|person,organization|}\">",
+            "\t<name>$5</name>",
+            "\t${6:<member-of-organization>$7</member-of-organization>}",
+            "</party>",
+            "<responsible-party role-id=\"$1\">",
+            "\t<party-uuid>$3</party-uuid>",
+            "</responsible-party>"
+        ]
+    },
+    "AP/AR Activity": {
+        "scope": "xml",
+        "prefix": [
+            "_ap_activity",
+            "_ar_activity"
+        ],
+        "body": [
+            "<activity uuid=\"${UUID}\">",
+            "\t<title>$1</title>",
+            "\t<description>",
+            "\t\t<p>$2</p>",
+            "\t</description>",
+            "\t$3",
+            "</activity>"
+        ]
+    },
+    "AP/AR Activity Step": {
+        "scope": "xml",
+        "prefix": [
+            "_ap_activity_step",
+            "_ar_activity_step"
+        ],
+        "body": [
+            "<step uuid=\"${UUID}\">",
+            "\t<title>$1</title>",
+            "\t<description>",
+            "\t\t<p>$2</p>",
+            "\t</description>",
+            "\t${3:<remarks>$4</remarks>}",
+            "</step>",
+        ]
+    },
+    "AP/AR Control Selection": {
+        "scope": "xml",
+        "prefix": "_control_selection",
+        "body": [
+            "<control-selection>",
+            "\t${1:<include-control control-id=\"$2\"/>}",
+            "\t${3:<include-all/>}",
+            "</control-selection>"
+        ]
+    },
+    "AR/POAM Observation": {
+        "scope": "xml",
+        "prefix": [
+            "_ar_observation",
+            "_poam_observation"
+        ],
+        "body": [
+            "<observation uuid=\"${UUID}\">",
+            "\t<title>$1</title>",
+            "\t<description>",
+            "\t\t<p>$2</p>",
+            "\t</description>",
+            "\t<method>${3|EXAMINE,INTERVIEW,TEST,UNKNOWN|}</method>",
+            "\t<type>${4|control-objective,ssp-statement-issue,mitigation,finding,historic|}</type>",
+            "\t${5:<subject subject-uuid=\"$6\" type=\"${7|component,inventory-item,location,party, user,resource|}\"/>}",
+            "\t<collected>${8:_datetime}</collected>",
+            "\t${9:<remarks>$10</remarks>}",
+            "</observation>",
+        ]
+    },
+    "AR/POAM Risk": {
+        "scope": "xml",
+        "prefix": [
+            "_ar_risk",
+            "_poam_risk"
+        ],
+        "body": [
+            "<risk uuid=\"${UUID}\">",
+            "\t<title>$1</title>",
+            "\t<description>",
+            "\t\t<p>$2</p>",
+            "\t</description>",
+            "\t<statement>",
+            "\t\t$3",
+            "\t</statement>",
+            "\t<status state=\"${4|open,investigating,remediating,deviation-requested,deviation-approved,closed|}\"/>",
+            "</risk>",
+        ]
+    },
+}
