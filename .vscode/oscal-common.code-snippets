@@ -22,7 +22,20 @@
             "</description>"
         ]
     },
-    "Metadata": {
+    "OSCAL JSON Metadata": {
+        "scope": "json",
+        "prefix": "_metadata",
+        "body": [
+            "\"metadata\": {",
+            "\t\"title\": \"$1\",",
+            "\t\"last-modified\": \"$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND.000-04:00\",",
+            "\t\"version\": \"${CURRENT_YEAR}${CURRENT_MONTH}${CURRENT_DATE}\",",
+            "\t\"oscal-version\": \"1.1.2\"",
+            "\t$2",
+            "},",
+        ]
+    },
+    "OSCAL XML Metadata": {
         "scope": "xml",
         "prefix": "_metadata",
         "body": [

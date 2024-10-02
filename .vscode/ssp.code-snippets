@@ -1,7 +1,7 @@
 {
 	// Credit to Matthew Ruge for the idea
 	// via https://gist.github.com/mruge-shr/e90c1e9e83db52038b8f520925a5ab32
-	"New SSP": {
+	"New OSCAL XML SSP": {
 		"scope": "xml",
 		"prefix": "_ssp",
 		"body": [
@@ -40,6 +40,48 @@
 			"\t\t$13",
 			"\t</control-implementation>",
 			"</system-security-plan>"
+		],
+		"description": "generate an SSP",
+	},
+	"New OSCAL JSON SSP": {
+		"scope": "json",
+		"prefix": "_ssp",
+		"body": [
+			"{",
+			"\t\"$$schema\": \"https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_complete_schema.json\",",
+			"\t\"system-security-plan\": {",
+			"\t\t\"uuid\": \"${UUID}\",",
+			"\t\t${1:_metadata}",
+			"\t\t\"import-profile\": { \"href\": \"$2\"},",
+			"\t\t\"system-characteristics\": {",
+			"\t\t\t<system-id identifier-type=\"http://ietf.org/rfc/rfc4122\">${UUID}</system-id>",
+			"\t\t\t<system-name>$3</system-name>",
+			"\t\t\t<description>",
+			"\t\t\t\t<p>$4</p>",
+			"\t\t\t</description>",
+			"\t\t\t<system-information>",
+			"\t\t\t\t${5:_ssp_information_type}",
+			"\t\t\t</system-information>",
+			"\t\t\t<security-impact-level>",
+			"\t\t\t\t<security-objective-confidentiality>$6</security-objective-confidentiality>",
+			"\t\t\t\t<security-objective-integrity>$7</security-objective-integrity>",
+			"\t\t\t\t<security-objective-availability>$8</security-objective-availability>",
+			"\t\t\t</security-impact-level>",
+			"\t\t\t<security-sensitivity-level>$9</security-sensitivity-level>",
+			"\t\t\t<status state=\"${10:under-development}\"/>",
+			"\t\t\t<authorization-boundary>",
+			"\t\t\t\t<description>",
+			"\t\t\t\t\t<p>$11</p>",
+			"\t\t\t\t</description>",
+			"\t\t\t</authorization-boundary>",
+			"\t}",
+			"\t<system-implementation>",
+			"\t\t$12",
+			"\t</system-implementation>",
+			"\t<control-implementation>",
+			"\t\t$13",
+			"\t</control-implementation>",
+			"}"
 		],
 		"description": "generate an SSP",
 	},
