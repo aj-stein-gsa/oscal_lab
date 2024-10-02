@@ -1,1 +1,16 @@
-{}
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "*.oscal.json"
+            ],
+            "url": "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_complete_schema.json"
+        }
+    ],
+    // YAML extension seems not to work properly?
+    "yaml.schemas": {
+        "https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_complete_schema.json": "*.oscal.yaml",
+    },
+    "editor.tabCompletion": "on",
+    "editor.snippetSuggestions": "inline"
+}
