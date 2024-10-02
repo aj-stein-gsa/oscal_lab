@@ -1,6 +1,6 @@
 {
     "name": "OSCAL Lab Dev Container",
-    "image": "ghcr.io/gsa/fedramp-automation/validation-tools:latest",
+    "image": "ghcr.io/gsa/fedramp-automation/validation-tools:5da931880619f232c54a8424318b16cf72539565",
     // "features": {},
     // "forwardPorts": [],
     // "postCreateCommand": "",
