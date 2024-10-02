@@ -3,7 +3,7 @@
     "image": "ghcr.io/gsa/fedramp-automation/validation-tools:latest",
     // "features": {},
     // "forwardPorts": [],
-    "postCreateCommand": "oscal-cli --version",
+    // "postCreateCommand": "",
     "customizations": {
         "vscode": {
             "extensions": [
