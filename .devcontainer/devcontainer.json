@@ -1,1 +1,16 @@
-{}
+{
+    "name": "OSCAL Lab Dev Container",
+    "image": "ghcr.io/gsa/fedramp-automation/validation-tools:latest",
+    // "features": {},
+    // "forwardPorts": [],
+    "postCreateCommand": "oscal-cli --version",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.live-server",
+                "redhat.vscode-xml",
+            ]
+        }
+    },
+    "remoteUser": "root"
+}
