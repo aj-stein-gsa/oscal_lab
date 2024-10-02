@@ -9,6 +9,7 @@
             "extensions": [
                 "ms-vscode.live-server",
                 "redhat.vscode-xml",
+                "MS-SarifVSCode.sarif-viewer"
             ]
         }
     },
